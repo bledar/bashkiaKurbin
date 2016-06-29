@@ -17,15 +17,13 @@ header{
     box-shadow: 5px 0px 5px #999;
     padding:0 0 10px 0;
 }
-
-.ribbon{height: 10px;width: 100%;margin-bottom: 10px;}
-.ribbon li{width: 20%;height: 100%; display: inline-block;}
-.ribbon li:nth-child(1){background-color: #c0392b;}
-.ribbon li:nth-child(2){background-color: #2980b9;}
-.ribbon li:nth-child(3){background-color: #27ae60;}
-.ribbon li:nth-child(4){background-color: #f39c12;}
-.ribbon li:nth-child(5){background-color: #8e44ad;}
-
+    .ribbon{height: 10px;width: 100%;margin-bottom: 10px;}
+    .ribbon li{width: 20%;height: 100%; display: inline-block;}
+    .ribbon li:nth-child(1){background-color: #c0392b;}
+    .ribbon li:nth-child(2){background-color: #2980b9;}
+    .ribbon li:nth-child(3){background-color: #27ae60;}
+    .ribbon li:nth-child(4){background-color: #f39c12;}
+    .ribbon li:nth-child(5){background-color: #8e44ad;}
 .container{
     width: 95%;
     max-width: 960px;
@@ -67,7 +65,7 @@ nav{
     background-color: rgba(255,255,255,1);
 }
 
-.menu > li > a:hover,.menu > li > a:focus{
+.menu> li:hover>a,.menu > li > a:hover{
     background-color: rgba(200,200,200,1);
     color: #333;
     border-bottom: 2px solid rgba(150,150,150,1);
@@ -76,16 +74,18 @@ nav{
 .menu > li > a{
     box-sizing: border-box;
     font-family: "Roboto Slab";
-    color: #666666;
-    text-transform: uppercase;
     font-size: 1em;
     min-width: 100px;
     padding: 10px 10px 20px 10px;
     text-align:center;
     border-bottom: 2px solid rgba(150,150,150,0);
-    text-decoration: none;
     width: 100%;
     display: inline-block;
+}
+.menu > li > a{
+    color: #666666;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .sub-menu{
@@ -110,7 +110,7 @@ nav{
     background-color: #2c3e50;
     color: #fff;
 }
-.menu > li > a:focus ~ .sub-menu{
+.menu > li:hover .sub-menu{
     max-height: 500px;
     transition: all .3s;
 }
@@ -190,11 +190,16 @@ nav{
 .item-news .readmore{
     margin-top: 10px;
     display: inline-block;
-    color: #11719e;
+    color: #fff;
     padding: 10px;
     width: 100%;
-    background-color: #95a5a6;
-    border-radius: 5px;
+    background-color: #2980b9;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.item-news .readmore:hover{
+    background-color: #1C577C;
+    transition: background-color .3s;
 }
 .two-col{
     margin-top: 20px;
@@ -207,8 +212,13 @@ nav{
 }
 .two-col-item h2{
     font-size: 21px;
-    color: #c0392b;
+    font-weight: bold;
     margin:20px 0px;
+    padding: 10px;
+}
+.service-link .service-title{
+    background-color: #2E997C;
+    color: #fff;
 }
 .service-link a{
     display: list-item;
@@ -222,14 +232,85 @@ nav{
     width: 70px;
     padding: 0 10px 0 0;
 }
+.notifications h2{
+    background-color: #CFD8DC;
+}
 .notifications .notifications-title{
     color: #000;
     text-decoration: none;
+    font-size: 18px;
+}
+.notifications .notifications-title:hover{
+    color: #11719e;
 }
 .notifications .notifications-item{
     padding: 10px 0;
     border-bottom: 1px solid #333;
 }
+section.gallery hr{
+    height: 10px;
+    background-color: #c0392b;
+}
+section.gallery h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+}
+.icon{
+    height: 1.5em;
+    margin: 0 5px  -.3em 0;
+}
+section.gallery li{
+    display: inline-block;
+}
+section.gallery li img{
+    height: 150px;
+}
+footer{
+    margin: 20px 0 0 0 ;
+    background-color: #9e9e9e;
+}
+.bottom-menu{
+    width: 100%;
+}
+
+.bottom-menu>li{
+    float: left;
+    display: block;
+    margin: 20px 0 0 0 ;
+    padding: 0px 20px;
+    border-right: 1px dotted #fff;
+    width: 20%;
+}
+.bottom-menu>li:nth-child(4n+1) {
+    clear: both;
+}
+.bottom-menu>li a ,.bottom-info a{
+    display: inline-block;
+    padding: 5px 0px;
+    color: #11719e;
+    text-decoration: none;
+}
+.bottom-menu>li a:hover,.bottom-info a:hover{text-decoration: underline;}
+.bottom-sub-menu>li>a{
+    padding: 0 0 3px 5px;
+}
+.bottom-info{text-align: center;}
+.copyright-bottom{
+    margin: 20px 0 0 0 ;
+    padding: 10px 0 10px 0;
+    background-color: #000;
+}
+.copyright-bottom p{
+    text-align: center;
+    color: #fff;
+    width: 50%;
+    float: left;
+}
+/******************* 
+    clear fix code 
+********************/
 .cf:before,
 .cf:after {
     content: " ";
